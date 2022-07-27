@@ -32,5 +32,33 @@ namespace StackAndQueueProblem
                 temp = temp.next;
             }
         }
+        internal void Peek() // this method is used to display the value which is at top
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty");
+                return;
+            }
+            Console.WriteLine("\n{0} is in the top of the stack ", this.top.data);//NullrefrenceRxception
+        }
+        internal void Pop() // this method is used to pop or remove the last element in stack
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty, Deletion is not possible");
+                return;
+            }
+            Console.WriteLine("Value popped is {0} ", this.top.data);
+            this.top = this.top.next;
+        }
+        internal void isEmpty() // this method is used to peek and pop the elements till it is empty
+        {
+            while(top != null)
+            {
+                Peek();
+                Pop();
+            }
+            Console.WriteLine("Stack is Empty");
+        }
     }
 }
